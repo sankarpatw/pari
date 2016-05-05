@@ -6,6 +6,16 @@
     }
 }
 
+::-moz-selection { /* Code for Firefox */
+    color: #D03800;
+    background: #FFC3AD;
+}
+
+::selection {
+    color: #D03800;
+    background: #FFC3AD;
+}
+
 .article-head {
     margin: 40px auto 70px auto;
     text-align: center;
@@ -40,7 +50,7 @@
         letter-spacing: 1.3px;
         text-transform: uppercase;
         a {
-
+          color:#222;
         }
 
     }
@@ -378,11 +388,23 @@
   margin-left:30px;
 }
 .location-label{
-  margin-right: 6px;
-  font-family: "fira sans",serif;
+  font-family: "fira sans", serif;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
+  color: #ee4303;
+  letter-spacing: 0.6px;
 }
 .location-name{
   font-size: 24px;
+}
+p{
+  strong{
+    color:#ee4303;
+  }
+}
+.related-articles-mod{
+  border-radius: 0;
+  background: #f9f9f9;
+  border: none;
+  border-top: 3px solid #ECECEC;
 }
