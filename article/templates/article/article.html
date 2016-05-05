@@ -66,7 +66,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="article-head">
 	{% block title %}
-        <div class="page-header">
+        <div class="page-header page-header-mod">
           <h1 class="article-title">{{ article.title }}</h1>
           <div class="article-strap">{% if article.strap %} {{ article.strap }} {% endif %}</div>
         </div>
@@ -110,7 +110,7 @@
 	</div>
 	<div>
 	  {% for author in article.authors.all %}
-	  <p><i>{% if author.bio %}{{ author.bio }}.{% endif %}{% if author.twitter_username %} You can contact the author here: <a href="https://twitter.com/{{ author.twitter_username }}">{{ author.twitter_username }}</a>{% endif %}</i></p>
+	  <p><i class='image-caption'>{% if author.bio %}{{ author.bio }}.{% endif %}{% if author.twitter_username %} You can contact the author here: <a href="https://twitter.com/{{ author.twitter_username }}">{{ author.twitter_username }}</a>{% endif %}</i></p>
 	  {% endfor %}
 	</div>
       </div>
