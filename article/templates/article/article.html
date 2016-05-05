@@ -116,7 +116,7 @@
       </div>
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2 map-mod">
-      <div class='location-label'>Location</div>
+      <h3 class='section-header'>Location</h3>
       {% if article.locations.count %}
         <p>{% for location in article.locations.all %}<a class='location-name' href="https://www.openstreetmap.org/?mlat={{ location.point.x }}&mlon={{ location.point.y }}#map=14/{{ location.point.x }}/{{ location.point.y }}" target="_blank">{{ location.name }}</a>{% if not forloop.last %},{% endif %}{% endfor %}</p>
         <div id="map" class="map-view" data-lat="{% for location in article.locations.all %}{{ location.point.x }}{% if not forloop.last %},{% endif %}{% endfor %}" data-long="{% for location in article.locations.all %}{{ location.point.y }}{% if not forloop.last %},{% endif %}{% endfor %}"></div>
@@ -128,7 +128,7 @@
       {% for related_article in article.related_articles %}
       {% if forloop.first %}
       <div class="related-articles well related-articles-mod">
-        <h3 CLASS='location-label'>{% trans "RELATED STORIES" %}</h3>
+        <h3 class='section-header'>{% trans "RELATED STORIES" %}</h3>
         <div class="row">
           {% endif %}
 	  <div class="col-lg-3 col-md-3 col-sm-3">
