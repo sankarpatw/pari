@@ -103,7 +103,7 @@
   </div>
   <div class="row">
     <div class="col-lg-1 col-md-1 col-sm-1"></div>
-    <div class="col-lg-9 col-md-9 col-sm-9 article-holder">
+    <div class="col-lg-8 col-md-8 col-sm-8 article-holder">
       <div class="article-content">
 	<div>
 	  {{ article.content|richtext }}
@@ -115,7 +115,8 @@
 	</div>
       </div>
     </div>
-    <div class="col-lg-2 col-md-2 col-sm-2">
+    <div class="col-lg-2 col-md-2 col-sm-2 map-mod">
+      <div class='location-label'>Location</div>
       {% if article.locations.count %}
         <p>{% for location in article.locations.all %}<a href="https://www.openstreetmap.org/?mlat={{ location.point.x }}&mlon={{ location.point.y }}#map=14/{{ location.point.x }}/{{ location.point.y }}" target="_blank">{{ location.name }}</a>{% if not forloop.last %},{% endif %}{% endfor %}</p>
         <div id="map" class="map-view" data-lat="{% for location in article.locations.all %}{{ location.point.x }}{% if not forloop.last %},{% endif %}{% endfor %}" data-long="{% for location in article.locations.all %}{{ location.point.y }}{% if not forloop.last %},{% endif %}{% endfor %}"></div>
