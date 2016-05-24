@@ -8,15 +8,21 @@ from wagtail.wagtailcore.whitelist import attribute_rule
 @hooks.register('construct_whitelister_element_rules')
 def whitelist_blockquote():
     return {
-        'blockquote': attribute_rule({'style': True}),
-        'p': attribute_rule({'style': True}),
-        'h2': attribute_rule({'style': True}),
-        'h3': attribute_rule({'style': True}),
-        'h4': attribute_rule({'style': True}),
-        'h5': attribute_rule({'style': True}),
+        'blockquote': attribute_rule({'class': True}),
+        'p': attribute_rule({'class': True}),
+        'h2': attribute_rule({'class': True}),
+        'h3': attribute_rule({'class': True}),
+        'h4': attribute_rule({'class': True}),
+        'h5': attribute_rule({'class': True}),
         'iframe': attribute_rule({
             'style': True, 'src': True,
             'width': True, 'height': True
+        }),
+        'img': attribute_rule({
+            'srcset': True, 'class': True,
+            'alt': True, 'sizes': True,
+            'width': True, 'height': True,
+            'src': True
         })
     }
 
@@ -31,6 +37,7 @@ def editor_js():
         registerHalloPlugin('hallohtml');
         </script>
         <script src="{0}article/js/slug.js"></script>
+        <script src="{0}article/js/align.js"></script>
         """,
         settings.STATIC_URL
     )

@@ -16,6 +16,10 @@
     background: #FFC3AD;
 }
 
+.mfp-bg {
+    opacity: 1.0;
+}
+
 .article-head {
     margin: 40px auto 70px auto;
     text-align: center;
@@ -199,13 +203,13 @@
     letter-spacing: 0.4px;
     text-align: inherit;
     p {
-	// text-align: justify;
       .image-caption{
         font-family: "open sans",sans-serif;
         font-style: normal;
         font-size: 12px;
         color: #989898;
       }
+	margin: 0;
     }
 
     .well {
@@ -237,25 +241,47 @@
     img {
 	max-width: 100%;
 	height: auto;
-	margin-bottom: -10px;
+
+	&.left {
+	    float: left;
+	    margin-right: 20px;
+	}
+
+	&.right {
+	    float: right;
+	    margin-left: 20px;
+	}
+
+	&.full-width {
+	    clear: both;
+	}
     }
 
-    img.left {
-	float: left;
-	margin-right: 20px;
-    }
-
-    img.right {
-	float: right;
-	margin-left: 20px;
-    }
-
-    img.full-width {
-	clear: both;
+    a.gallery {
+	.fa.fa-arrows-alt {
+	    color: #000;
+	    font-size: 2em;
+	}
     }
 
     ul {
 	list-style-type: disc;
+    }
+
+    .center {
+	text-align: center;
+    }
+
+    .left {
+	text-align: left;
+    }
+
+    .right {
+	text-align: right;
+    }
+
+    .justify {
+	text-align: justify;
     }
 }
 

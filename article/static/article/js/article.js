@@ -1,4 +1,6 @@
 $(function() {
+    $(".lazyload").css("display", "block");
+
     $(".scrollToTop").hide();
 
     $(".full-row .info a").on("click", function() {
@@ -23,5 +25,42 @@ $(function() {
 	$("body").animate({
 	    scrollTop: 0
 	}, 1000);
+    });
+
+    $('.rich-text img').each(function() {
+    	$(this).wrap('<a class="gallery" href="javascript:void(0)"></a>');
+    });
+
+    $('.rich-text .gallery').magnificPopup({
+	type: 'image',
+	tLoading: 'Loading image #%curr%...',
+	image: {
+	    titleSrc: function(item) {
+		var el = item.el;
+		var parent = item.el.closest("p");
+		var sibling = parent.next("p");
+		var ital = sibling.find("i");
+		if (ital.length > 0 && ital.text().trim().length > 0) {
+		    console.log(sibling.html());
+		    return sibling.html();
+		} else {
+		    return null;
+		}
+	    }
+	},
+	gallery: {
+	    enabled: true,
+	    navigateByImgClick: true,
+	    preload: false
+	},
+	callbacks: {
+	    elementParse: function(item) {
+		var nextItem = $(this.items[this.index + 1]);
+		$(nextItem).find("img").addClass("lazypreload");
+	    	var $this = $(item.el).find("img");
+	    	var src = $this.attr("data-src") || $this.prop("currentSrc") || $this.attr("src");
+	    	item.src = src;
+	    }
+	}
     });
 });
