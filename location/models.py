@@ -19,9 +19,11 @@ class Location(models.Model):
     taluka = models.CharField(max_length=100, null=True, blank=True)
     tehsil = models.CharField(max_length=100, null=True, blank=True)
     mandapam = models.CharField(max_length=100, null=True, blank=True)
+    mandal = models.CharField(max_length=100, null=True, blank=True)
     others = models.CharField(max_length=100, null=True, blank=True)
 
     objects = models.GeoManager()
+
 
     def __str__(self):
         return "{0}, {1}, {2} ({3}, {4})".format(self.name, self.district,

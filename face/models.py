@@ -26,11 +26,12 @@ class Face(Page):
     description = RichTextField(blank=True)
     language = models.CharField(max_length=7, choices=settings.LANGUAGES)
 
-    occupation = models.CharField(max_length=50, null=True, blank=True)
+    occupation = models.CharField(max_length=300, null=True, blank=True)
     adivasi = models.CharField(max_length=50, null=True, blank=True)
     quote = RichTextField(blank=True)
     child = models.BooleanField(default=False)
     age = models.IntegerField(null=True, blank=True)
+    url = models.URLField(max_length=300, null=True, blank=True)
 
     GENDER_CHOICES= (
         ('F', 'Female'),
