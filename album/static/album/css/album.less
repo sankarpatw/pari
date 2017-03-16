@@ -114,16 +114,61 @@
         &:after {
             background: #000;
         }
-        .mfp-close {
-            .transition (0.4s);
-            right: @sidebarWidth;
-            @media (max-width: @switchOver) {
-                right: 0;
+        .navbar-collapse{
+            padding: 0;
+        }
+        .header-controls {
+            width: 100%;
+            //position: relative;
+            li {
+                color: white;
+                //padding: 0 20px;
+                &.back-to-albums{
+                    font-size: 42px;
+                }
+                &.slide-grid {
+                    font-size: 25px;
+                }
+                &.slide-pause {
+                    font-size: 21px;
+                }
+                &.slide-status {
+                    font-size: 20px;
+                    //padding: 0 10px;
+                }
+                &.mfp-counter {
+                    position: inherit;
+                }
+                &.popup-info{
+                    font-size: 20px;
+                    //position: absolute;
+                    //right: 10px !important;
+                    //.transition (0.4s);
+                    //@media (max-width: @switchOver) {
+                    //    right: 0;
+                    //}
+                }
             }
+            //.close-popup {
+            //    .transition (0.4s);
+            //    //right: @sidebarWidth;
+            //    @media (max-width: @switchOver) {
+            //        right: 0;
+            //    }
+            //}
+            //.fa-angle-left {
+            //        right: 6%;
+            //    }
+            height: 50px;
+            background: darkred;
         }
     }
 
     .mfp-arrow {
+        &.mfp-arrow-left {
+
+        }
+
         &.mfp-arrow-right {
             right: @arrowRightLocation;
             @media (max-width: @switchOver) {
@@ -134,15 +179,33 @@
 
     &-fullscreen {
         .mfp-figure {
-            .mfp-close {
-                right: 1%;
+            .header-controls {
+                //.close-popup {
+                //    right: 1%;
+                //}
+                //.fa-angle-left {
+                //    right: 6%;
+                //}
+                //.popup-info {
+                //
+                //    //right: 10px !important;
+                //}
+                //.close-popup {
+                //    right: 1%;
+                //}
+                //.close-popup {
+                //    right: 1%;
+                //}
+                //.close-popup {
+                //    right: 1%;
+                //}
             }
             .mfp-img-holder {
                 left: 0;
                 width: 100%;
             }
             .mfp-bottom-bar {
-                left: 99%;
+                left: 100%;
             }
         }
 
@@ -166,7 +229,7 @@
 
     .mfp-bottom-bar {
         .transition (0.4s);
-        top: 0;
+        top: 50px;
         width: @sidebarWidth;
         left: @sidebarLocation;
         .box-sizing(border-box);

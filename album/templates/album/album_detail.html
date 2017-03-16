@@ -33,7 +33,7 @@
 	{% if album.slides.count %}
         {% with album.slides.all|random as cover %}
 	{% image cover.image fill-360x300 as cover_image %}
-        <img class="img-responsive" src="{{ cover_image.url }}" alt="{{ cover.image.alt_text|striptags }}">
+        <img class="img-responsive" src="{{ STATIC_URL }}img/stories-4.jpg" alt="{{ cover.image.alt_text|striptags }}">
         {% endwith %}
 	{% endif %}
       </div>
@@ -68,9 +68,9 @@
   {% endif %}
   <div class="album-images">
     <div class="col-lg-4 col-md-4 col-sm-4 center">{% image slide.image max-1024x1024 as slide_image %}
-      <a href="{{ slide_image.url }}" title="{{ slide.description|striptags }}" data-audio="{% firstof slide.audio "" %}" data-photographer="{% for photographer in slide.image.photographers.all %}{{ photographer.name }}{% if not forloop.last %}, {% endif %}{% endfor %}" data-location="{% for location in slide.image.locations.all %}{{ location.name }}{% if not forloop.last %},{% endif %} {% endfor %}" data-location-description="{% for location in slide.image.locations.all %}{% if location.district %}{{ location.district }}{% endif %}{% if location.state %}, {{ location.state }}{% endif %}{% if not forloop.last %};{% endif %} {% endfor %}" data-date="{{ album.first_published_at|date:"F Y" }}" data-url="{{ album.get_absolute_url }}" data-allowcomments="false" class="image-tag mfp-image">
+      <a href="{{ STATIC_URL }}img/stories-4.jpg" title="{{ slide.description|striptags }}" data-audio="{% firstof slide.audio "" %}" data-photographer="{% for photographer in slide.image.photographers.all %}{{ photographer.name }}{% if not forloop.last %}, {% endif %}{% endfor %}" data-location="{% for location in slide.image.locations.all %}{{ location.name }}{% if not forloop.last %},{% endif %} {% endfor %}" data-location-description="{% for location in slide.image.locations.all %}{% if location.district %}{{ location.district }}{% endif %}{% if location.state %}, {{ location.state }}{% endif %}{% if not forloop.last %};{% endif %} {% endfor %}" data-date="{{ album.first_published_at|date:"F Y" }}" data-url="{{ album.get_absolute_url }}" data-allowcomments="false" class="image-tag mfp-image">
 	<div class="grid-column">
-	  <img class="center-block album_image lazyload" data-src="{{ slide_image.url }}" alt="{{ slide.image.alt_text|striptags|safe }}">
+	  <img class="center-block album_image lazyload" data-src="{{ STATIC_URL }}img/stories-4.jpg" alt="{{ slide.image.alt_text|striptags|safe }}">
 	  <div class="caption">
 	    <p>{{ slide.description|striptags|truncatechars:50|safe }}</p>
 	    {% if slide.audio %}
@@ -89,4 +89,75 @@
   {% endif %}
   {% endfor %}
 </div>
+
+
+{#        <nav id="mainnav" class="navbar navbar-inverse navbar-static-top " role="navigation">#}
+{#            <div class="container">#}
+{#                <div class="row">#}
+{#                    <div class="col-lg-4 col-md-4 col-sm-2">#}
+{#                        <div class="navbar-header">#}
+{#                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">#}
+{#                                <span class="icon-bar"></span>#}
+{#                                <span class="icon-bar"></span>#}
+{#                                <span class="icon-bar"></span>#}
+{#                            </button>#}
+{#                            <a class="navbar-brand" href="/">#}
+{#                                <img src="{{ STATIC_URL }}img/logo.png" title="{{ page.title }}" alt="{{ page.title }}" class="logo img-responsive">#}
+{#                            </a>#}
+{#                            <div class="navbar-brand-title hidden-sm">Peoples Archive of Rural India</div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-lg-8 col-md-8 col-sm-10">#}
+{#                        <div class="collapse navbar-collapse">#}
+{#                            <ul class="nav navbar-nav navbar-right" itemscope itemtype="http://schema.org/SiteNavigationElement">#}
+{#                                {% include "pages/menus/dropdown.html" %}#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </nav>#}
+
+<script type="text/template" id="slide-template">
+    <div class="mfp-figure">
+        <nav class="navbar navbar-default" role="navigation">
+            <div>
+                <div class="row">
+{#                    <div class="col-lg-12 col-md-4 col-sm-2">#}
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+{#                            <div class="navbar-brand" href="/">#}
+{#                                <span class="slide-status mfp-counter"></span>#}
+{#                            </div>#}
+                        </div>
+{#                    </div>#}
+                    <div class="col-lg-12 col-md-8 col-sm-10">
+                        <div class="collapse navbar-collapse">
+                            <ul class="header-controls nav navbar-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                                <li class="fa fa-angle-left back-to-albums"></li>
+                                 <li class="fa fa-th-large slide-grid"></li>
+                                 <li class="fa fa-pause slide-pause"></li>
+                                 <li class="slide-status mfp-counter"></li>
+                                 <li class="fa fa-info-circle popup-info"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="mfp-img-holder">
+            <div class="mfp-img"></div>
+            <div class="mfp-controls">
+                <i class="fa fa-volume-off"></i><i class="fa fa-play audio"></i><i class="fa fa-pause audio" style="display:none"></i>
+            </div>
+        </div>
+        <div class="mfp-bottom-bar">
+            <div class="mfp-title"></div>
+        </div>
+    </div>
+</script>
 {% endblock %}
