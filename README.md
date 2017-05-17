@@ -1,5 +1,7 @@
 ![N|Solid](https://ruralindiaonline.org/static/img/logo.png)    **People's Archive Of Rural India**
 
+[![CircleCI](https://circleci.com/gh/sankarpatw/pari/tree/master.svg?style=svg)](https://circleci.com/gh/sankarpatw/pari/tree/master)
+
 **[PARI](https://ruralindiaonline.org/)** is a digital journalism platform in India, founded by veteran journalist and former rural affairs editor of 'The Hindu', **Palagummi Sainath**. **PARI** is a volunteer-run rural journalism platform.
 
 ## Development setup
