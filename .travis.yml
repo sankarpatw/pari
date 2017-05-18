@@ -27,7 +27,7 @@ script: python manage.py test author --keepdb
 
 deploy:
    provider: script
-   script:./deploy.sh
+   script: ./deploy.sh
    on:
      branch:release
 
