@@ -29,6 +29,6 @@ deploy:
    provider: script
    script: ./deploy.sh
    on:
-     branch:release
+     all_branches:true
 
  
