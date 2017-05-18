@@ -18,9 +18,9 @@ django-redis==4.3.0
 # Need to upgrade to next version after https://github.com/django-compressor/django-compressor/issues/698 is fixed
 django-compressor==1.6
 
-factory_boy==2.8.1
-nplusone==0.7.3
-selenium==3.4.1
+#factory_boy==2.8.1
+#nplusone==0.7.3
+#selenium==3.4.1
 
 
 requests
