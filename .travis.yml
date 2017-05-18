@@ -26,4 +26,7 @@ before_script:
 script: python manage.py test author --keepdb
 
 after_success:
+   on:
+     branch:release
+     ./deploy.sh
  
