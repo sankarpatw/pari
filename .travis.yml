@@ -28,7 +28,6 @@ script: python manage.py test author --keepdb
 deploy:
    provider: script
    script: ./deploy.sh
-   on:
-     all_branches:true
+
 
  
