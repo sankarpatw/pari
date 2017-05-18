@@ -31,7 +31,8 @@ deploy:
    skip_cleanup: true
 
 addons:
-   ec2-52-14-252-14.us-east-2.compute.amazonaws.com
+   ssh_known_hosts:
+   - ec2-52-14-252-14.us-east-2.compute.amazonaws.com
 
 
  
