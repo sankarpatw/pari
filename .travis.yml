@@ -30,5 +30,8 @@ deploy:
    script: sh deploy.sh
    skip_cleanup: true
 
+addons:
+   ec2-52-14-252-14.us-east-2.compute.amazonaws.com
+
 
  
