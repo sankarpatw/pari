@@ -30,7 +30,7 @@ deploy:
 
 addons:
    ssh_known_hosts:
-   - ec2-52-14-252-14.us-east-2.compute.amazonaws.com
+   - ec2-13-58-83-216.us-east-2.compute.amazonaws.com
 
 
  
