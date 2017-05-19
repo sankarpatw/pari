@@ -1,8 +1,7 @@
 #!bin/bash
 
 chmod 400 pari-test.pem
-cp pari-test.pem ~/.ssh/
 #rsync -rave "ssh -i pari-test.pem" .* ubuntu@ec2-52-14-252-14.us-east-2.compute.amazonaws.com:/home/ubuntu/pari/
 git clone https://github.com/sankarpatw/pari-ansible.git
 cd pari-ansible
-ansible-playbook -l staging -u ubuntu -i hosts.yml site.yml -vvvv
+ansible-playbook -l staging -u ubuntu private_key_file=../pari-test.pem -i hosts.yml site.yml -vvvv
