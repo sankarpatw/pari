@@ -4,7 +4,7 @@ python:
   - "2.7"
 
 before_install:
-   openssl aes-256-cbc -K $encrypted_cbd4cd1910df_key -iv $encrypted_cbd4cd1910df_iv -in pari-test.pem.enc -out pari-test.pem -d
+   openssl aes-256-cbc -K $encrypted_cbd4cd1910df_key -iv $encrypted_cbd4cd1910df_iv -in $env_mac_key -out pari-test.pem -d
 
 install:
         - "pip install ansible==2.0"
