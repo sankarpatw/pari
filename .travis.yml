@@ -19,6 +19,3 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
-addons:
-  ssh_known_hosts:
-  - ec2-13-58-83-216.us-east-2.compute.amazonaws.com
