@@ -3,6 +3,9 @@ language: python
 python:
   - "2.7"
 
+before_install:
+   openssl aes-256-cbc -K $encrypted_cbd4cd1910df_key -iv $encrypted_cbd4cd1910df_iv -in pari-test.pem.enc -out pari-test.pem -d
+
 install:
         - "pip install ansible==2.0"
         - "pip install six"
@@ -17,3 +20,17 @@ before_script:
        - psql -d test_pari -c "CREATE EXTENSION postgis;"
 
 script: python manage.py test author --keepdb
+
+deploy:
+   provider: script
+   script: sh deploy.sh
+   skip_cleanup: true
+   on:
+     branch: master
+
+addons:
+   ssh_known_hosts:
+   - ec2-13-58-83-216.us-east-2.compute.amazonaws.com
+
+
+ 
