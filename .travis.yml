@@ -2,8 +2,7 @@ language: python
 python:
 - '2.7'
 before_install:
-- openssl aes-256-cbc -K $encrypted_cbd4cd1910df_key -iv $encrypted_cbd4cd1910df_iv
-  -in deploy_rsa.enc -out deploy_rsa -d
+  openssl aes-256-cbc -K $encrypted_cbd4cd1910df_key -iv $encrypted_cbd4cd1910df_iv -in deploy_rsa.enc -out deploy_rsa -d
 install:
 - pip install ansible==2.0
 - pip install six
